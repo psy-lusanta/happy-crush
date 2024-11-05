@@ -1,0 +1,500 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Anton", sans-serif;
+}
+
+html {
+    height: 4000px;
+    background-image: url(photos/bg.jpg);
+}
+
+/*|------------------|
+  |                  |
+  |    TEXTS         |
+  |                  |
+  |------------------|*/
+
+.animated-text, .animated-text-reverse{
+    font-size: clamp(20px, 1vw + 1rem, 100px);
+    text-align: center;
+}
+
+.animated-text {
+    font-family: "Anton", sans-serif;
+    text-shadow: 5px 3px #009ba0;
+}
+
+.starbs-fam {
+    font-size: clamp(20px, 10vw + 3rem, 200px);
+    text-align: center;
+    text-shadow: 5px 3px #009ba0;
+}
+
+/*|------------------|
+  |                  |
+  |    SECTIONS      |
+  |                  |
+  |------------------|*/
+  
+section {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.sec-2, .sec-3, .sec-4{
+    opacity: 0;
+    transition: all 1s;
+}
+
+.show-animate {
+    opacity: 1;
+}
+
+.sec-1 .animation {
+    transform: translateX(-100%);
+}
+
+.sec-1.show-animate .animation {
+    transform: translateX(0);
+}
+
+section .animated-text {
+    transition: 1s;
+}
+
+section .animated-text-reverse {
+    transition: 1s;
+}
+
+.sec-2 .animated-text {
+    transform: translateX(-100%);
+    font-size: clamp(60px, 7vw + 1rem, 200px);
+    font-weight: bolder;
+}
+
+.sec-2.show-animate .animated-text {
+    transform: translateX(0);
+}
+
+.sec-2 .animated-text-reverse {
+    transform: translateX(100%)
+}
+
+.sec-2.show-animate .animated-text-reverse {
+    transform: translateX(0);
+}
+
+/*|------------------|
+  |                  |
+  |    HEADER LOOP   |
+  |                  |
+  |------------------|*/
+
+.loop2 {
+    font-size: clamp(10px, 3vw + 1rem, 80px);
+    white-space: nowrap;
+    font-weight: bolder;
+    width: 100%;
+    overflow: hidden;
+}
+
+.loop-div2 {
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    animation: 40s slide infinite linear;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/*|------------------|
+  |                  |
+  |    HOMEPAGE      |
+  |                  |
+  |------------------|*/
+
+.loop {
+    font-size: clamp(60px, 7vw + 1rem, 200px);
+    white-space: nowrap;
+    font-weight: bold;
+    overflow: hidden;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+}
+
+.loop-div {
+    display: inline-block;
+    color: white;
+    font-weight: bolder;
+    animation: 20s slide infinite linear;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.image-container {
+    position: relative;
+}
+
+.building {
+    width: 100%;
+    display: block;
+}
+
+.untitled {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: auto;
+}
+
+/*|------------------|
+  |                  |
+  |   SIX PICTURES   |
+  |                  |
+  |------------------|*/
+
+video {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.3);
+}
+
+.videos {
+    padding: 0px 10px;
+}
+
+
+/*|------------------|
+  |                  |
+  |   SIX PICTURES   |
+  |                  |
+  |------------------|*/
+
+.pictures-six {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 3px; 
+    column-gap: 6px;
+    padding: 20px;
+    position: relative;
+}
+
+.picture-item img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.picture-item:hover{
+    border-radius: 10px;
+}
+
+.pictures-six .picture-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.pictures-six .picture-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+}
+
+.pictures-six .picture-item:hover img{
+    transform: scale(1.1);
+}
+
+
+/*----WORK WORDS----*/
+.selected-speech {
+    display: flex;
+    justify-content: start;
+    margin-left: 20px;
+}
+
+.div-selected-speech {
+    font-size: clamp(10px, 2vw + 1rem, 70px);
+}
+
+.selected-words-div {
+    display: flex;
+    justify-content: end;
+}
+
+.works-words-div {
+    display: flex;
+    justify-content: end;
+}
+
+.overall-select {
+    display: flex;
+    justify-content: end;
+    margin-right: 12px;
+}
+
+.selected-words, .work-words {
+    text-shadow: 10px 5px #00cad1;
+    font-size: clamp(50px, 10vw + 1rem, 300px);
+    margin-left: 10px;
+    font-family: "Anton", sans-serif;
+    font-weight: bold;
+}
+
+
+/*|------------------|
+  |                  |
+  |   ALL PICTURES   |
+  |                  |
+  |------------------|*/
+
+
+.all-logos {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    display: flex;
+    gap: 4px;
+    overflow: hidden;
+    height: 600px;
+    background-color: black;
+}
+
+.logos1 {
+    white-space: nowrap;
+}
+
+.logos-slide1 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    animation: 10s slider infinite linear;
+}
+
+.logos-slide1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+@keyframes slider {
+    from {
+        transform: translateY(0)
+    }
+    
+    to {
+        transform: translateY(-100%);
+    }
+}     
+
+.logos2 {
+    white-space: nowrap;
+}
+
+.logos-slide2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    animation: 10s slider2 infinite linear;
+}
+
+.logos-slide2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+ @keyframes slider2 {
+    from {
+        transform: translateY(-100%)
+    }
+    
+    to {
+        transform: translateY(0);
+    }
+}  
+
+.logos3 {
+    white-space: nowrap;
+}
+
+.logos-slide3 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    animation: 10s sliderz infinite linear;
+}
+
+.logos-slide3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes sliderz {
+    from {
+        transform: translateY(0)
+    }
+    
+    to {
+        transform: translateY(-100%);
+    }
+}    
+
+
+/*|------------------|
+  |                  |
+  |   SOLO PICTURE   |
+  |                  |
+  |------------------|*/
+
+
+.div-solo-pic {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.solo-pic {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.solo-pic img {
+    width: 70%;
+    padding: 30px;
+}
+
+.solo-pic-caption {
+    font-size: clamp(10px, 2vw + 1rem, 80px);
+    font-weight: bold;
+    width: 100%;
+    color: white;
+    position: absolute;
+    padding-top: 160px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+} 
+
+.span-caption1 {
+    margin-left: 20px;
+}
+
+.span-caption2 {
+    margin-left: 70px;
+}
+
+.span-caption3 {
+    margin-left: 150px;
+}
+
+.span-caption4 {
+    margin-left: 200px;
+}
+
+/*|------------------|
+  |                  |
+  |   SOLO PICTURE   |
+  |                  |
+  |------------------|*/
+
+.footer {
+    border-top: solid 1px black;
+}
+
+.footer-div {
+    font-family: "Bebas Nue", sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+/*|------------------|
+  |                  |
+  |   MEDIA QUERIES  |
+  |                  |
+  |------------------|*/
+
+@media (max-width: 425px){
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .animated-text-reverse {
+        margin-bottom: 20px;
+    }
+
+    .pictures-six {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 3px; 
+        column-gap: 6px;
+        padding: 20px;
+        position: relative;
+    }
+}
+
+@media (min-width: 768px){
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    .animated-text-reverse {
+        margin-bottom: 20px;
+    }
+
+    .pictures-six {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 3px; 
+        column-gap: 6px;
+        padding: 20px;
+        position: relative;
+    }
+}
+
+
+@media (min-width: 1024px){
+
+    .pictures-six {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 3px; 
+        column-gap: 6px;
+        padding: 20px;
+        position: relative;
+    }
+}
